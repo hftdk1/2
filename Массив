@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+	<title></title>
+<script>
+var a = [];
+for (var i=0;i<10000;++i)
+{
+  a.push(Math.floor(Math.random() * (1 - 10000 + 1)) + 100);
+  document.write([i+a[i]); 
+}
+  
+for (var i=0;i<a.length;++i)
+{
+  var n=i;
+  for (var j=i+1;j<a.length;++j)
+    if (a[j]>a[n])
+      n=j;
+  if (n!=i)
+  {
+    var v=a[i];
+    a[i]=a[n];
+    a[n]=v;
+  }
+}
+
+for (var i in a)
+  document.write(a[i]); 
+</script>
+</head>
+</body>
+</html>
